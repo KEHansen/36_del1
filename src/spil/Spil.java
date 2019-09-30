@@ -61,7 +61,17 @@ public class Spil {
             in.nextLine(); //Venter på et input før koden kører videre
             slag1 = d1.roll();
             slag2 = d2.roll();
-            if (slag1 + slag2 == 12) {
+
+            // hvis de slår 2 1'ere
+            if (slag1 + slag2 == 2) {
+                // her bliver tælleren reset:
+                tæller2 = 0;
+                // der bliver printet ud at han har mistet alle point:
+                System.out.println("Spiller 1 slog to 1'ere og mistede alle sine point.");
+            }
+
+            // hvis det nu skulle slå 2 6'ere igen. Vil de vinde spillet
+            else if (slag1 + slag2 == 12) {
                 System.out.println("Spiller 1 slog par 6 to gange i træk og vinder derfor spillet.");
                 gameOn = false;
             } else {
@@ -95,21 +105,36 @@ public class Spil {
             // der bliver printet ud at han har mistet alle point:
             System.out.println("Spiller 2 slog to 1'ere og mistede alle sine point.");
         } else {
-
-            // men hvis det så ikke er
+            /* Hvis der ikke bliver slået 2, 1'ere
+               Vil alt andet blive lagt sammen til tælleren, og videre til spiller 1 */
             tæller2 = tæller2 + slag1 + slag2;
             System.out.println("Spiller 2 slog en " + slag1 + "'er og en " + slag2 + "'er og har nu " + tæller2 + " point.");
         }
 
+        // hvis der bliver slået 2 6'ere vil vi køre gennem dette if statement:
         if (slag1 + slag2 == 12) {
+            // her får de afvide at de må slå igen:
             System.out.println("Spiller 2 slog to 6'ere og må slå igen.");
             in.nextLine(); //Venter på et input før koden kører videre
             slag1 = d1.roll();
             slag2 = d2.roll();
-            if (slag1 + slag2 == 12) {
+
+            // hvis de slår 2 1'ere
+            if (slag1 + slag2 == 2) {
+                // her bliver tælleren reset:
+                tæller2 = 0;
+                // der bliver printet ud at han har mistet alle point:
+                System.out.println("Spiller 2 slog to 1'ere og mistede alle sine point.");
+            }
+
+            // hvis det nu skulle slå 2 6'ere igen. Vil de vinde spillet
+            else if (slag1 + slag2 == 12) {
                 System.out.println("Spiller 2 slog par 6 to gange i træk og vinder derfor spillet.");
+                // spillet vil slutte
                 gameOn = false;
+
             } else {
+                // hvis de ikke slår 2 6'ere vil spille forsætte
                 tæller2 = tæller2 + slag1 + slag2;
                 System.out.println("Spiller 2 slog en " + slag1 + "'er og en " + slag2 + "'er og har nu " + tæller2 + " point.");
             }
