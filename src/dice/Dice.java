@@ -7,7 +7,7 @@ public class Dice {
     private int faceValue;
 
     /* Vi definere vores terninger at værdien skal være et tal fra 1 til 6.
-    * der sker ved at vi siger +1 af (math.random() * MAX) som ellers vil være fra 0-5 */
+    * det sker ved at vi siger +1 af (math.random() * MAX) som ellers vil være fra 0-5 */
     public Dice() {
         faceValue = (int) (Math.random() * MAX) + 1;
     }
