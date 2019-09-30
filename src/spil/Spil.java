@@ -30,8 +30,10 @@ public class Spil {
 
     }
 
+
+    // Spiller 1
     public static void spiller1() {
-        // Spiller 1 //
+        //  notifikation på at spiller 1 skal slå
         System.out.println("Spiller 1s tur.");
         s1 = in.nextLine();
         slag1 = d1.roll();
