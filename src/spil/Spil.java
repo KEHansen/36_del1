@@ -1,9 +1,9 @@
-package terningeSpil;
+package spil;
 
 import java.util.Scanner;
 import dice.Dice;
 
-public class TerningeSpil {
+public class Spil {
 
     // Her indføres scanner, strenge, heltal og terninger til spillet //
     public static Scanner in = new Scanner(System.in);
@@ -13,11 +13,9 @@ public class TerningeSpil {
     public static Dice d2 = new Dice();
     public static boolean gameOn = true;
 
-    public static Boolean WHAT = false;
-
     public static void main(String[] args) {
 
-        // Dette er while løkken, hvor i spillet kører //;
+        // Dette er while løkken, hvor i spillet kører //
         System.out.println("Tryk 'Enter' for at slå med terningerne.");
 
         while (gameOn == true) {
@@ -57,8 +55,13 @@ public class TerningeSpil {
             s1 = in.nextLine();
             slag1 = d1.roll();
             slag2 = d2.roll();
+            if (slag1 + slag2 == 12) {
+                System.out.println("Spiller 1 slog par 6 to gange i træk og vinder derfor spillet.");
+                gameOn = false;
+            } else {
             tæller1 = tæller1 + slag1 + slag2;
             System.out.println("Spiller 1 slog en " + slag1 + "'er og en " + slag2 + "'er og har nu " + tæller1 + " point.");
+            }
         }
     }
 
@@ -87,8 +90,13 @@ public class TerningeSpil {
             s2 = in.nextLine();
             slag1 = d1.roll();
             slag2 = d2.roll();
-            tæller2 = tæller2 + slag1 + slag2;
-            System.out.println("Spiller 2 slog en " + slag1 + "'er og en " + slag2 + "'er og har nu " + tæller2 + " point.");
+            if (slag1 + slag2 == 12) {
+                System.out.println("Spiller 2 slog par 6 to gange i træk og vinder derfor spillet.");
+                gameOn = false;
+            } else {
+                tæller2 = tæller2 + slag1 + slag2;
+                System.out.println("Spiller 2 slog en " + slag1 + "'er og en " + slag2 + "'er og har nu " + tæller2 + " point.");
+            }
         }
     }
 
