@@ -71,22 +71,32 @@ public class Spil {
         }
     }
 
+    // Spiller 2 //
     public static void spiller2() {
-        // Spiller 2 //
+        // notifikation på at spiller 2 skal slå
         System.out.println("Spiller 2s tur.");
         in.nextLine();
         slag1 = d1.roll();
         slag2 = d2.roll();
 
+        /* dette er en if statement for hvis vi vinder,
+           Det vil sige at hvis tælleren kommer over 40 og slag 1 og slag 2 er det sammme.
+           MEN ikke er 2
+           Så har spiller 2 vundet*/
         if (tæller2 > 40 && slag1 == slag2 && slag1 + slag2 != 2) {
             System.out.println("Spiller 2 slog to " + slag1 + "'ere har vundet spillet.");
             gameOn = false;
         }
 
+        // hvis spiller 2 han slår 2, 1'ere vil den løbe igennem dette if statement som er:
         if (slag1 + slag2 == 2) {
+            // her bliver tælleren reset:
             tæller2 = 0;
+            // der bliver printet ud at han har mistet alle point:
             System.out.println("Spiller 2 slog to 1'ere og mistede alle sine point.");
         } else {
+
+            // men hvis det så ikke er
             tæller2 = tæller2 + slag1 + slag2;
             System.out.println("Spiller 2 slog en " + slag1 + "'er og en " + slag2 + "'er og har nu " + tæller2 + " point.");
         }
