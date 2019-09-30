@@ -1,27 +1,27 @@
 package spil;
 
-import java.util.Scanner;
-import dice.Dice;
+import java.util.Scanner; //importerer java.util.Scanner som bruges til at opdage når brugeren har trykkede på enter
+import dice.Dice; //importerer dice klassen
 
 public class Spil {
 
-    // Her indføres scanner, strenge, heltal og terninger til spillet //
-    public static Scanner in = new Scanner(System.in);
-    public static String s1, s2;
-    public static int slag1, slag2, tæller1 = 0, tæller2 = 0;
-    public static Dice d1 = new Dice();
-    public static Dice d2 = new Dice();
-    public static boolean gameOn = true;
+    // Her indføres scanner, strenge, heltal og terninger til spillet
+    public static Scanner in = new Scanner(System.in); //laver et scanner der hedder in
+    public static int slag1, slag2, tæller1 = 0, tæller2 = 0; //slag1 og slag2 bruges til at gemme information om de sidste to slag, tæller 1 og 2 tæller summen et et spillers point
+    public static Dice d1 = new Dice(); //Laver et objekt ved navn d1 ud fra dice klassen
+    public static Dice d2 = new Dice(); //Laver et objekt ved navn d2 ud fra dice klassen
+    public static boolean gameOn = true; //Boolean som ændrer sig hvis et spiller har vundet spillet, hvis det er falk, ville spillet slutte.
 
+    // Her er main metoden som køres når programmet køres
     public static void main(String[] args) {
 
-        // Dette er while løkken, hvor i spillet kører //
         System.out.println("Tryk 'Enter' for at slå med terningerne.");
 
+        // Dette er while løkken, hvor i spillet kører
         while (gameOn == true) {
-
+            //Kører spiller1(); funktionen,  dette slår terning for spiller 1 og bestemmer om der er to ettere to seksere osv. Det holder også styr på spillerens tæller
             spiller1();
-
+            //Gør det samme for spiller 2, der er brugt et andet tæller så spilleren kan have sin egen tæller.
             spiller2();
 
         }
@@ -35,7 +35,7 @@ public class Spil {
     public static void spiller1() {
         //  notifikation på at spiller 1 skal slå
         System.out.println("Spiller 1s tur.");
-        s1 = in.nextLine();
+        in.nextLine();
         slag1 = d1.roll();
         slag2 = d2.roll();
 
@@ -54,7 +54,7 @@ public class Spil {
 
         if (slag1 + slag2 == 12) {
             System.out.println("Spiller 1 slog to 6'ere og må slå igen.");
-            s1 = in.nextLine();
+            in.nextLine(); //Venter på et input før koden kører videre
             slag1 = d1.roll();
             slag2 = d2.roll();
             if (slag1 + slag2 == 12) {
@@ -70,7 +70,7 @@ public class Spil {
     public static void spiller2() {
         // Spiller 2 //
         System.out.println("Spiller 2s tur.");
-        s2 = in.nextLine();
+        in.nextLine();
         slag1 = d1.roll();
         slag2 = d2.roll();
 
@@ -89,7 +89,7 @@ public class Spil {
 
         if (slag1 + slag2 == 12) {
             System.out.println("Spiller 2 slog to 6'ere og må slå igen.");
-            s2 = in.nextLine();
+            in.nextLine(); //Venter på et input før koden kører videre
             slag1 = d1.roll();
             slag2 = d2.roll();
             if (slag1 + slag2 == 12) {
