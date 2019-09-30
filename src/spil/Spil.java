@@ -33,12 +33,15 @@ public class Spil {
 
     // Spiller 1
     public static void spiller1() {
-        //  notifikation på at spiller 1 skal slå
+        // notifikation på at spiller 1 skal slå
         System.out.println("Spiller 1s tur.");
+        //Venter på noget input før koden køres
         in.nextLine();
+        //Slår med første terning ved at bruge roll funktionen i Dice klassen for både objektet d1 og d2
         slag1 = d1.roll();
         slag2 = d2.roll();
 
+        //
         if (tæller1 > 40 && slag1 == slag2 && slag1 + slag2 != 2) {
             System.out.println("Spiller 1 slog to " + slag1 + "'ere har vundet spillet.");
             gameOn = false;
