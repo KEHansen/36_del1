@@ -41,7 +41,7 @@ public class Spil {
         slag1 = d1.roll();
         slag2 = d2.roll();
 
-        //
+        //Undersøget om spiller 1 har over 40 point, hvis de har over 40 point, så undersøges der om de har slået to ens, og at de to ens ikke er to ettere. Hvis alt dette er sandt så slutter spillet
         if (tæller1 > 40 && slag1 == slag2 && slag1 + slag2 != 2) {
             System.out.println("Spiller 1 slog to " + slag1 + "'ere har vundet spillet.");
             gameOn = false;
