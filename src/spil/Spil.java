@@ -41,12 +41,12 @@ public class Spil {
         slag1 = d1.roll();
         slag2 = d2.roll();
 
-        //Undersøget om spiller 1 har over 40 point, hvis de har over 40 point, så undersøges der om de har slået to ens, og at de to ens ikke er to ettere. Hvis alt dette er sandt så slutter spillet
+        //Undersøger om spiller 1 har over 40 point, hvis de har over 40 point, så undersøges der om de har slået to ens, og at de to ens ikke er to ettere. Hvis alt dette er sandt så slutter spillet
         if (tæller1 > 40 && slag1 == slag2 && slag1 + slag2 != 2) {
             System.out.println("Spiller 1 slog to " + slag1 + "'ere har vundet spillet.");
             gameOn = false;
         }
-
+        //Undersøger om der er blivet slået to ettere. Hvis der er så mister spilleren alle sine point, så tælleren er sat lig med 0
         if (slag1 + slag2 == 2) {
             tæller1 = 0;
             System.out.println("Spiller 1 slog to 1'ere og mistede alle sine point.");
@@ -55,6 +55,7 @@ public class Spil {
             System.out.println("Spiller 1 slog en " + slag1 + "'er og en " + slag2 + "'er og har nu " + tæller1 + " point.");
         }
 
+        //Undersøger om der er blevet slået to seksere, hvis der er slået to seksere får spiller et tur til, hvis det sker igen, så vinder de spillet.
         if (slag1 + slag2 == 12) {
             System.out.println("Spiller 1 slog to 6'ere og må slå igen.");
             in.nextLine(); //Venter på et input før koden kører videre
