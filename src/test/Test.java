@@ -6,12 +6,13 @@ public class Test {
 
     public static void main(String[] args) {
         Dice d1 = new Dice(), d2 = new Dice();
-        // Vi definerer variablerne for summen mellem 2 og 12,....
+        // Vi definerer variablerne for summen mellem 2 og 12, og variabler for den samlede sum.
         double antalPar = 0;
         double sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
         double sum8 = 0, sum9 = 0, sum10 = 0, sum11 = 0, sum12 = 0;
         int sum = 0, t1 = 0, t2 = 0;
         int i = 0;
+        // Vi definerer desuden hvor mange test vi vil gennemføre.
         int antalTest = 10000;
 
         while (i<antalTest) {
